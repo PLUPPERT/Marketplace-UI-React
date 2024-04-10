@@ -1,23 +1,21 @@
-import logo from './logo.svg';
-import './App.css';
+import React from "react";
+import "./App.css";
+import NavBar, { Header } from "./components/NavBar";
 
 function App() {
+  const logo = "logo.jpg";
+  const navLinks = ["Login", "Sign Up", "About"];
+
+  const titleText = "Marketplace UI!";
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <NavBar logo={logo} navLinks={navLinks} />
+      <Header
+        bgColor={"bg-danger"}
+        textColor={"text-light"}
+        titleText={titleText}
+      />
     </div>
   );
 }

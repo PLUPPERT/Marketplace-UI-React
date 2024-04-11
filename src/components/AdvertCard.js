@@ -4,66 +4,46 @@ import Row from "react-bootstrap/Row";
 import Col from "react-bootstrap/Col";
 import Card from "react-bootstrap/Card";
 import Image from "react-bootstrap/Image";
+import Button from "react-bootstrap/Button";
 import { advertData } from "../data";
 
 const AdvertCard = (props) => {
   return (
-    <Container>
+    <Container style={{ paddingBottom: "0px" }}>
       <Row>
-        <Col className="col-4">
-          <Card className="mb-3">
-            <Image
-              className="card-img-top"
-              src={advertData[0].image}
-              alt={advertData[0].title}
-            />
-          </Card>
-        </Col>
-        <Col className="col-4">
-          <Card className="mb-3">
-            <Image
-              className="card-img-top"
-              src={advertData[0].image}
-              alt={advertData[0].title}
-            />
-          </Card>
-        </Col>
-        <Col className="col-4">
-          <Card className="mb-3">
-            <Image
-              className="card-img-top"
-              src={advertData[0].image}
-              alt={advertData[0].title}
-            />
-          </Card>
-        </Col>
-        <Col className="col-4">
-          <Card className="mb-3">
-            <Image
-              className="card-img-top"
-              src={advertData[0].image}
-              alt={advertData[0].title}
-            />
-          </Card>
-        </Col>
-        <Col className="col-4">
-          <Card className="mb-3">
-            <Image
-              className="card-img-top"
-              src={advertData[0].image}
-              alt={advertData[0].title}
-            />
-          </Card>
-        </Col>
-        <Col className="col-4">
-          <Card className="mb-3">
-            <Image
-              className="card-img-top"
-              src={advertData[0].image}
-              alt={advertData[0].title}
-            />
-          </Card>
-        </Col>
+        {advertData.map((data) => {
+          const cardElement = (
+            <Col className="col-4">
+              <Card
+                className="mb-3"
+                style={{
+                  border: "none",
+                  boxShadow: "0 4px 8px rgba(0, 0, 0, 0.1)",
+                }}
+              >
+                <Image
+                  className="card-img-top"
+                  src={data.image}
+                  alt={data.title}
+                />
+                <Card.Body style={{ paddingBottom: "0px" }}>
+                  <Card.Title>{data.title}</Card.Title>
+                  <Card.Text>{data.description}</Card.Text>
+                  <Card.Text>Contact: ***</Card.Text>
+                  <Container
+                    className="bg-light py-2 mb-1 d-flex justify-content-center"
+                    style={{
+                      boxShadow: "0px -2px 0px rgba(0, 0, 0, 0.1)",
+                    }}
+                  >
+                    <Button variant="info">Details</Button>
+                  </Container>
+                </Card.Body>
+              </Card>
+            </Col>
+          );
+          return cardElement;
+        })}
       </Row>
     </Container>
   );

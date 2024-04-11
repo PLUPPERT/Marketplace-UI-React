@@ -8,12 +8,19 @@ import Button from "react-bootstrap/Button";
 import { advertData } from "../data";
 
 const AdvertCard = (props) => {
+  const { searchInput } = props;
+
   return (
     <Container style={{ paddingBottom: "0px" }}>
       <Row>
         {advertData.map((data) => {
+          let value = searchInput.toUpperCase().trimStart().trimEnd();
+          let display = data.title.toUpperCase().startsWith(value)
+            ? ""
+            : "none";
+
           const cardElement = (
-            <Col className="col-4">
+            <Col className="col-4" style={{ display: display }}>
               <Card
                 className="mb-3"
                 style={{
@@ -29,14 +36,21 @@ const AdvertCard = (props) => {
                 <Card.Body style={{ paddingBottom: "0px" }}>
                   <Card.Title>{data.title}</Card.Title>
                   <Card.Text>{data.description}</Card.Text>
-                  <Card.Text>Contact: ***</Card.Text>
+                  <Card.Text
+                    onClick={() => alert(data.contact)}
+                    style={{ cursor: "pointer" }}
+                  >
+                    Contact: ***
+                  </Card.Text>
                   <Container
                     className="bg-light py-2 mb-1 d-flex justify-content-center"
                     style={{
                       boxShadow: "0px -2px 0px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    <Button variant="info">Details</Button>
+                    <Button variant="info" onClick={() => alert(data.contact)}>
+                      Details
+                    </Button>
                   </Container>
                 </Card.Body>
               </Card>

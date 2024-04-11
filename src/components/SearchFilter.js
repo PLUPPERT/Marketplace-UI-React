@@ -2,6 +2,12 @@ import React from "react";
 import Container from "react-bootstrap/Container";
 
 const SearchFilter = (props) => {
+  const { getSearchInput } = props;
+
+  const handleInput = (event) => {
+    getSearchInput(event.target.value);
+  };
+
   return (
     <Container>
       <div class="input-group mb-3">
@@ -10,10 +16,10 @@ const SearchFilter = (props) => {
         </span>
         <input
           type="text"
+          id="inputText"
           class="form-control"
           placeholder="Enter title"
-          aria-label="SearchTitle"
-          aria-describedby="input-addon"
+          onChange={handleInput}
         />
       </div>
     </Container>

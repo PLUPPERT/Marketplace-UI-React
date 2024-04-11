@@ -48,7 +48,11 @@ const AdvertCard = (props) => {
                       boxShadow: "0px -2px 0px rgba(0, 0, 0, 0.1)",
                     }}
                   >
-                    <Button variant="info" onClick={() => alert(data.contact)}>
+                    <Button
+                      variant="info"
+                      className="text-light"
+                      onClick={() => alert(data.contact)}
+                    >
                       Details
                     </Button>
                   </Container>

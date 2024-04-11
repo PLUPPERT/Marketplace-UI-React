@@ -4,7 +4,7 @@ import Container from "react-bootstrap/Container";
 import SearchFilter from "./SearchFilter";
 import AdvertCard from "./AdvertCard";
 
-const AdvertList = (props) => {
+const AdvertList = () => {
   const [searchInput, setSearchInput] = useState("");
 
   const getSearchInput = (textInput) => {

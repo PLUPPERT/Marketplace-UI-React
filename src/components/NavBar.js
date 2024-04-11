@@ -36,7 +36,7 @@ export const Header = (props) => {
   return (
     <Container
       fluid
-      className={`py-5 mb-2 ${bgColor ? bgColor : "bg-info"} ${textColor}`}
+      className={`pt-5 pb-3 mb-1 ${bgColor ? bgColor : "bg-info"} ${textColor}`}
     >
       <h2 className={`ms-5 ${textColor}`}>{titleText && titleText}</h2>
       <h2>{!titleText && "Title haven't been set :("}</h2>

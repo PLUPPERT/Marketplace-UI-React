@@ -1,6 +1,7 @@
 import React from "react";
 import "./App.css";
 import NavBar, { Header } from "./components/NavBar";
+import AdvertList from "./components/AdvertList";
 
 function App() {
   const logo = "logo.jpg";
@@ -16,6 +17,7 @@ function App() {
         textColor={"text-light"}
         titleText={titleText}
       />
+      <AdvertList />
     </div>
   );
 }
